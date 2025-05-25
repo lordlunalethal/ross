@@ -1,0 +1,127 @@
+/*
+* LittleLink Button Styles
+* https://littlelink.io
+* Free to use under the MIT license
+* http://www.opensource.org/licenses/mit-license.php
+*/
+
+/* Brand Button Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Only include brand-specific button styling here */
+.button,button {
+  color:var(--button-text,#000000);
+  background-color:var(--button-background,transparent);
+	border:var(--button-border,none);
+	transition:filter 0.2s ease,transform 0.2s ease;
+}
+
+/* Global Button Hover Effect
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.button:hover,button:hover {
+	filter:brightness(90%);
+	transform:translateY(-1px);
+}
+
+/* Button Icons
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.icon {
+	filter:var(--icon-filter,none);
+}
+
+/* Brand-Specific Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Default */
+.button.button-default {
+	--button-text:#ffffff;
+	--button-background:#2457F5;
+	--button-border:1px solid #ffffff;
+}
+
+/* Amazon */
+.button-amazon {
+	--button-text:#000000;
+	--button-background:#FFFFFF;
+	--button-border:1px solid #212121;
+}
+
+/* Amazon Music */
+.button-amazon-music {
+	--button-text:#000000;
+	--button-background:#25D1DA;
+}
+
+/* Apple App Store */
+.button-appstore {
+	--button-text:#FFFFFF;
+	--button-background:#000000;
+	--button-border:1px solid #FFFFFF;
+}
+
+/* Apple Music */
+.button-apple-music {
+	--button-text:#ffffff;
+	--button-background:#000000;
+	--button-border:1px solid #FFFFFF;
+}
+
+/* Apple Music Alt */
+.button-apple-music-alt {
+	--button-text:#ffffff;
+	background-image:linear-gradient(to bottom,#FB5C74,#FA233B);
+}
+
+/* Apple Podcasts */
+.button-apple-podcasts {
+	--button-text:#ffffff;
+	--button-background:#000000;
+	--button-border:1px solid #FFFFFF;
+}
+
+/* Apple Podcasts Alt */
+.button-apple-podcasts-alt {
+	--button-text:#ffffff;
+	background-image:linear-gradient(to bottom,#F452FF,#832BC1);
+}
+
+/* Bandcamp */
+.button-bandcamp {
+	--button-text:#ffffff;
+	--button-background:#1d9fc3;
+}
+
+
+}
+
+/* WhatsApp */
+.button-whatsapp {
+	--button-text:#ffffff;
+	--button-background:#455a64;
+}
+
+/* WordPress */
+.button-wordpress {
+	--button-text:#ffffff;
+	--button-background:#3858E9;
+}
+
+/* X */
+.button-x {
+	--button-text:#FFFFFF;
+	--button-background:#000000;
+	--button-border:1px solid #FFFFFF;
+}
+
+/* YouTube */
+.button-yt {
+	--button-text:#ffffff;
+	--button-background:#282828;
+	--button-border:1px solid #FFFFFF;
+}
+
+/* Zoom */
+.button-zoom {
+	--button-text:#ffffff;
+	--button-background:#0B5CFF;
+  --button-border:1px solid #FFFFFF;
+}

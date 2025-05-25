@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html class="theme-auto" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Luna-Links</title>
+    <link rel="icon" type="image/x-icon" href="/images/avatar.png">
+    <meta name="description" content="Ready to grow and expand your reach? We've got you covered.">
+    <meta name="keywords" content="Luna, Tech, and Software Engineering">
+    <meta rel="canonical" href="https://yourwebsite.com">
+    <meta name="author" content="Kalenda Ngonga">
+    <link rel="shortcut icon" href="favicon.ico">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/brands.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    
+    <style>
+        /*
+        * Luna-Links CSS
+        * Optimized and fixed version
+        */
+
+        /* Base Variables */
+        :root {
+          --scale-0: 1rem;           /* 16px */
+          --scale-1: 1.25rem;        /* 20px */
+          --scale-2: 1.563rem;       /* 25px */
+          --scale-3: 1.953rem;       /* 31px */
+          --scale-4: 2.441rem;       /* 39px */
+          --scale-5: 3.052rem;       /* 49px */
+          
+          --spacing-xs: 0.5rem;      /* 8px */
+          --spacing-s: 1rem;         /* 16px */
+          --spacing-m: 1.5rem;       /* 24px */
+          --spacing-l: 2rem;         /* 32px */
+          --spacing-xl: 3rem;        /* 48px */
+          --spacing-xxl: 4rem;       /* 64px */
+          
+          --primary-color: #2457F5;
+          --text-color: #1a1a1a;
+          --bg-color: #ffffff;
+        }
+
+        /* Base Styles */
+        body {
+          margin: 0;
+          padding: 0;
+          background-color: var(--bg-color);
+          color: var(--text-color);
+          font-family: "Open Sans", system-ui, sans-serif;
+          font-size: var(--scale-1);
+          line-height: 1.6;
+        }
+
+        /* Layout */
+        .container {
+          position: relative;
+          width: 100%;
+          max-width: 37.5rem;
+          margin: 0 auto;
+          padding: var(--spacing-xl) var(--spacing-m);
+          text-align: center;
+          box-sizing: border-box;
+        }
+
+        .column {
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        /* Typography */
+        h1 {
+          margin: 0 0 var(--spacing-m) 0;
+          font-size: var(--scale-5);
+          font-weight: 800;
+          line-height: 1.1;
+          letter-spacing: -0.02em;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+        }
+
+        h2 {
+          font-size: var(--scale-3);
+          font-weight: 700;
+          margin-bottom: var(--spacing-m);
+        }
+
+        p {
+          margin: 0 0 var(--spacing-xl) 0;
+          line-height: 1.6;
+          max-width: 80ch;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        /* Video Player */
+        .video-player {
+          position: relative;
+          width: 100%;
+          max-width: 600px;
+          margin: 2rem auto;
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+          background: #000;
+        }
+
+        .video-player video {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+
+        .video-controls {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(0, 0, 0, 0.3);
+          transition: opacity 0.3s ease;
+        }
+
+        .video-controls.hidden {
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        .play-button {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.9);
+          border: none;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .play-button:hover {
+          background: rgba(255, 255, 255, 1);
+          transform: scale(1.1);
+        }
+
+        .play-button::after {
+          content: '';
+          width: 0;
+          height: 0;
+          border-left: 20px solid #333;
+          border-top: 12px solid transparent;
+          border-bottom: 12px solid transparent;
+          margin-left: 4px;
+        }
+
+        .video-title {
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          color: white;
+          font-size: 1.2rem;
+          font-weight: 600;
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Avatar */
+        .avatar {
+          width: 8rem;
+          height: 8rem;
+          border-radius: 50%;
+          object-fit: cover;
+          margin: 0 auto var(--spacing-l);
+          display: block;
+        }
+
+        .avatar--rounded {
+          border-radius: 50%;
+        }
+
+        .avatar--soft {
+          border-radius: 0.5rem;
+        }
+
+        .avatar--none {
+          border-radius: 0%;
+        }
+
+        /* Brands Slider */
+        .brands-slider {
+          width: 100%;
+          padding: 2rem 0;
+          margin: 2rem auto;
+          overflow: hidden;
+        }
+
+        .brands-slider .swiper-wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition-timing-function: linear;
+        }
+
+        .brands-slider .swiper-slide {
+          width: auto !important;
+          height: 80px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0 15px;
+        }
+
+        .brands-slider img {
+          width: 70px;
+          height: 70px;
+          transition: all 0.3s ease;
+        }
+
+        .brands-slider img:hover {
+          transform: scale(1.2);
+        }
+
+        /* Contact Icons */
+        .contact-icons {
+          display: flex;
+          justify-content: center;
+          gap: 1.5rem;
+          margin: 2rem 0;
+        }
+
+        .contact-icons a {
+          display: inline-flex;
+          padding: 10px;
+          border-radius: 50%;
+          transition: all 0.3s;
+        }
+
+        .contact-icons img {
+          width: 40px;
+          height: 40px;
+          transition: transform 0.3s;
+        }
+
+        .contact-icons a:hover img {
+          transform: scale(1.2);
+        }
+
+        .whatsapp-link {
+          background: #25D366;
+        }
+
+        .whatsapp-link:hover {
+          background: #128C7E;
+        }
+
+        .gmail-link {
+          background: #EA4335;
+        }
+
+        .gmail-link:hover {
+          background: #D33426;
+        }
+
+        .phone-link {
+          background: #34B7F1;
+        }
+
+        .phone-link:hover {
+          background: #269BD1;
+        }
+
+        /* Developer Section */
+        .developer-section {
+          text-align: center;
+          margin: 3rem auto;
+          max-width: 600px;
+          padding: 0 20px;
+        }
+
+        .developer-photo {
+          width: 180px;
+          height: 180px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin: 0 auto 1.5rem;
+          display: block;
+          border: 4px solid var(--primary-color);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-in .column > * {
+          animation: slideIn 0.6s ease-out forwards;
+        }
+
+        .animate-in h1 { animation-delay: 0.2s; }
+        .animate-in p { animation-delay: 0.4s; }
+        .animate-in .brands-slider { animation-delay: 0.6s; }
+        .animate-in .contact-icons { animation-delay: 0.8s; }
+        .animate-in .developer-section { animation-delay: 1s; }
+
+        /* Footer */
+        footer {
+          margin: var(--spacing-xxl) 0;
+          font-size: var(--scale-0);
+        }
+
+        /* Theme System */
+        :root.theme-dark {
+          color-scheme: dark;
+          --text-color: #ffffff;
+          --bg-color: #121212;
+        }
+
+        :root.theme-dark a:not(.button) {
+          color: #4899F7;
+        }
+
+        :root.theme-dark a:not(.button):hover {
+          color: #7AB8FF;
+        }
+
+        :root.theme-auto {
+          color-scheme: light dark;
+        }
+
+        @media (prefers-color-scheme: dark) {
+          :root.theme-auto {
+            --text-color: #ffffff;
+            --bg-color: #121212;
+          }
+          
+          :root.theme-auto a:not(.button) {
+            color: #4899F7;
+          }
+          
+          :root.theme-auto a:not(.button):hover {
+            color: #7AB8FF;
+          }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 34.375rem) {
+          h1 {
+            font-size: var(--scale-4);
+          }
+          
+          body {
+            font-size: var(--scale-0);
+          }
+          
+          .container p {
+            font-size: var(--scale-0);
+          }
+          
+          .avatar {
+            margin-bottom: var(--spacing-m);
+          }
+          
+          footer {
+            margin: var(--spacing-xl) 0;
+          }
+          
+          .brands-slider img {
+            width: 60px;
+            height: 60px;
+          }
+
+          .play-button {
+            width: 60px;
+            height: 60px;
+          }
+
+          .play-button::after {
+            border-left: 15px solid #333;
+            border-top: 9px solid transparent;
+            border-bottom: 9px solid transparent;
+          }
+        }
+
+        /* Font Faces */
+        @font-face {
+          font-display: swap;
+          font-family: 'Open Sans';
+          font-style: normal;
+          font-weight: 400;
+          src: url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff2') format('woff2');
+        }
+
+        @font-face {
+          font-display: swap;
+          font-family: 'Open Sans';
+          font-style: normal;
+          font-weight: 600;
+          src: url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-600.woff2') format('woff2');
+        }
+
+        @font-face {
+          font-display: swap;
+          font-family: 'Open Sans';
+          font-style: normal;
+          font-weight: 700;
+          src: url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-700.woff2') format('woff2');
+        }
+
+        @font-face {
+          font-display: swap;
+          font-family: 'Open Sans';
+          font-style: normal;
+          font-weight: 800;
+          src: url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-800.woff2') format('woff2');
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="column">
+            <!-- Video Player Section -->
+            <div class="video-player">
+                <video id="introVideo" loop>
+                    <source src="vid/ross.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+                <div class="video-controls" id="videoControls">
+                    <button class="play-button" id="playButton" aria-label="Play video"></button>
+                </div>
+                <div class="video-title">Ronald Nursing Institute</div>
+            </div>
+
+            <!-- Avatar -->
+            <img class="avatar avatar--rounded" src="images/luna.png" srcset="images/avatar@2x.png 2x" alt="Luna-Links Logo">
+
+            <!-- Header -->
+            <h1 tabindex="0">Let's Take Ronald Ross Nursing! Online :)</h1>
+            <p tabindex="0">Partnering with Mufulira businesses to unlock their potential. Click on any one of these below to see our work.</p>
+
+            <!-- Brands Slider -->
+            <div class="brands-slider swiper">
+    <div class="swiper-wrapper">
+        <a href="https://lordlunalethal.github.io/nirvana/" target="_blank" class="swiper-slide">
+            <div class="brand-item">
+                <img src="images/icons/logo2.png" alt="Amazon">
+                <span>Nirvana</span>
+            </div>
+        </a>
+        <a href="https://lordlunalethal.github.io/ubcon/index.html" target="_blank" class="swiper-slide">
+            <div class="brand-item">
+                <img src="images/icons/ub.png" alt="Apple Music">
+                <span>Ubcon</span>
+            </div>
+        </a>
+        <a href="https://lordlunalethal.github.io/betterchoice/index.html" target="_blank" class="swiper-slide">
+            <div class="brand-item">
+                <img src="images/icons/b.png" alt="WhatsApp">
+                <span>BChoice</span>
+            </div>
+        </a>
+        <a href="https://lordlunalethal.github.io/canzambia/" target="_blank" class="swiper-slide">
+            <div class="brand-item">
+                <img src="images/icons/c.png" alt="Spotify">
+                <span>CanZM</span>
+            </div>
+        </a>
+        
+        <a href="https://lordlunalethal.github.io/mosworks/index.html" target="_blank" class="swiper-slide">
+            <div class="brand-item">
+                <img src="images/icons/m.png" alt="Apple Music">
+                <span>Mworks</span>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+            <!-- Developer Section -->
+            <div class="developer-section">
+                <img src="images/k.png" alt="Kalenda Ngonga" class="developer-photo">
+                <h2>Meet Your Developer</h2>
+                <p>Hi, I'm Kalenda! Bsc Information Security & Computer Forensics.Boasting 9+ years in tech, I specialize in Web/App Development, Cybersecurity & custom Software solutions engineering...</p>
+            </div>
+
+            <!-- Contact Icons -->
+            <div class="contact-icons">
+                <a href="https://wa.me/260972056352?text=Hello%20Luna-Links" class="whatsapp-link" target="_blank" rel="noopener noreferrer">
+                    <img src="images/icons/whatsapp.svg" alt="WhatsApp">
+                </a>
+                <a href="tel:+260765869001" class="phone-link">
+                    <img src="images/icons/call.svg" alt="Call">
+                </a>
+                <a href="mailto:ngngakalenda@gmail.com?subject=Luna-Links%20Inquiry&body=Hello%20Kalenda," class="gmail-link" target="_blank" rel="noopener noreferrer">
+                    <img src="images/icons/email.svg" alt="Email">
+                </a>
+            </div>
+
+            <!-- Footer -->
+            <footer>
+                The future is here! and it's digital! Allow us to secure your growth :) <br> Email: ngongakalenda@gmail.com <br> OR <br> Call:+260765869001
+            </footer>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Swiper
+            new Swiper('.brands-slider', {
+                slidesPerView: 'auto',
+                centeredSlides: true,
+                spaceBetween: 20,
+                freeMode: true,
+                loop: true,
+                autoplay: {
+                    delay: 2000,
+                    disableOnInteraction: false,
+                }
+            });
+
+            // Video Player Handling
+            const video = document.getElementById('introVideo');
+            const playButton = document.getElementById('playButton');
+            const videoControls = document.getElementById('videoControls');
+
+            // Ensure video starts paused and unmuted
+            video.pause();
+            video.muted = false;
+            video.currentTime = 0;
+
+            // Play button click handler
+            playButton.addEventListener('click', function() {
+                if (video.paused) {
+                    video.play();
+                    videoControls.classList.add('hidden');
+                } else {
+                    video.pause();
+                    videoControls.classList.remove('hidden');
+                }
+            });
+
+            // Show controls when video is paused
+            video.addEventListener('pause', function() {
+                videoControls.classList.remove('hidden');
+            });
+
+            // Hide controls when video plays
+            video.addEventListener('play', function() {
+                videoControls.classList.add('hidden');
+            });
+
+            // Show controls when video ends
+            video.addEventListener('ended', function() {
+                videoControls.classList.remove('hidden');
+            });
+
+            // Optional: Hide controls on mouse leave after a delay when playing
+            let hideControlsTimeout;
+            const videoPlayer = document.querySelector('.video-player');
+            
+            videoPlayer.addEventListener('mouseenter', function() {
+                if (!video.paused) {
+                    clearTimeout(hideControlsTimeout);
+                    videoControls.classList.remove('hidden');
+                }
+            });
+
+            videoPlayer.addEventListener('mouseleave', function() {
+                if (!video.paused) {
+                    hideControlsTimeout = setTimeout(() => {
+                        videoControls.classList.add('hidden');
+                    }, 2000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
